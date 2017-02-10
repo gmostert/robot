@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<testsuite tests="90" failures="0" name="feature.robot.RobotTest" time="0.02" errors="0" skipped="0">
+  <properties>
+    <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
+    <property name="sun.boot.library.path" value="C:\Program Files\Java\jdk1.8.0_111\jre\bin"/>
+    <property name="java.vm.version" value="25.111-b14"/>
+    <property name="java.vm.vendor" value="Oracle Corporation"/>
+    <property name="maven.multiModuleProjectDirectory" value="C:\Users\gmost\workspace\robot"/>
+    <property name="java.vendor.url" value="http://java.oracle.com/"/>
+    <property name="path.separator" value=";"/>
+    <property name="guice.disable.misplaced.annotation.check" value="true"/>
+    <property name="java.vm.name" value="Java HotSpot(TM) 64-Bit Server VM"/>
+    <property name="file.encoding.pkg" value="sun.io"/>
+    <property name="user.script" value=""/>
+    <property name="user.country" value="GB"/>
+    <property name="sun.java.launcher" value="SUN_STANDARD"/>
+    <property name="sun.os.patch.level" value=""/>
+    <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
+    <property name="user.dir" value="C:\Users\gmost\workspace\robot"/>
+    <property name="java.runtime.version" value="1.8.0_111-b14"/>
+    <property name="java.awt.graphicsenv" value="sun.awt.Win32GraphicsEnvironment"/>
+    <property name="java.endorsed.dirs" value="C:\Program Files\Java\jdk1.8.0_111\jre\lib\endorsed"/>
+    <property name="os.arch" value="amd64"/>
+    <property name="java.io.tmpdir" value="C:\Users\gmost\AppData\Local\Temp\"/>
+    <property name="line.separator" value="
+"/>
+    <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
+    <property name="user.variant" value=""/>
+    <property name="os.name" value="Windows 10"/>
+    <property name="classworlds.conf" value="C:\Users\gmost\workspace\.metadata\.plugins\org.eclipse.m2e.launching\launches\m2conf1056349700791733070.tmp"/>
+    <property name="sun.jnu.encoding" value="Cp1252"/>
+    <property name="java.library.path" value="C:\Program Files\Java\jdk1.8.0_111\bin;C:\WINDOWS\Sun\Java\bin;C:\WINDOWS\system32;C:\WINDOWS;C:/Program Files/Java/jre1.8.0_121/bin/server;C:/Program Files/Java/jre1.8.0_121/bin;C:/Program Files/Java/jre1.8.0_121/lib/amd64;C:\ProgramData\Oracle\Java\javapath;c:\program files (x86)\intel\icls client\;c:\program files\intel\icls client\;c:\windows\system32;c:\windows;c:\windows\system32\wbem;c:\windows\system32\windowspowershell\v1.0\;c:\program files\intel\wifi\bin\;c:\program files\common files\intel\wirelesscommon\;c:\program files (x86)\intel\intel(r) management engine components\dal;c:\program files\intel\intel(r) management engine components\dal;c:\program files (x86)\intel\intel(r) management engine components\ipt;c:\program files\intel\intel(r) management engine components\ipt;c:\program files (x86)\skype\phone\;c:\windows\system32;c:\windows;c:\windows\system32\wbem;c:\windows\system32\windowspowershell\v1.0\;c:\program files\nodejs\;c:\windows\system32;c:\windows;c:\windows\system32\wbem;c:\windows\system32\windowspowershell\v1.0\;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files (x86)\Java\jre1.8.0_111\bin;C:\Users\gmost\AppData\Local\Programs\Git\cmd;C:\Users\gmost\AppData\Roaming\npm;%USERPROFILE%\AppData\Local\Microsoft\WindowsApps;;C:\Users\gmost\eclipse\jee-neon\eclipse;;."/>
+    <property name="java.specification.name" value="Java Platform API Specification"/>
+    <property name="java.class.version" value="52.0"/>
+    <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
+    <property name="os.version" value="10.0"/>
+    <property name="user.home" value="C:\Users\gmost"/>
+    <property name="user.timezone" value="Australia/Sydney"/>
+    <property name="java.awt.printerjob" value="sun.awt.windows.WPrinterJob"/>
+    <property name="java.specification.version" value="1.8"/>
+    <property name="file.encoding" value="Cp1252"/>
+    <property name="user.name" value="gmost"/>
+    <property name="java.class.path" value="/C:/Users/gmost/eclipse/jee-neon/eclipse/../../../.p2/pool/plugins/org.eclipse.m2e.maven.runtime_1.7.0.20160603-1931/jars/plexus-classworlds-2.5.2.jar"/>
+    <property name="java.vm.specification.version" value="1.8"/>
+    <property name="sun.arch.data.model" value="64"/>
+    <property name="java.home" value="C:\Program Files\Java\jdk1.8.0_111\jre"/>
+    <property name="sun.java.command" value="org.codehaus.plexus.classworlds.launcher.Launcher -B clean install"/>
+    <property name="java.specification.vendor" value="Oracle Corporation"/>
+    <property name="user.language" value="en"/>
+    <property name="awt.toolkit" value="sun.awt.windows.WToolkit"/>
+    <property name="java.vm.info" value="mixed mode"/>
+    <property name="java.version" value="1.8.0_111"/>
+    <property name="java.ext.dirs" value="C:\Program Files\Java\jdk1.8.0_111\jre\lib\ext;C:\WINDOWS\Sun\Java\lib\ext"/>
+    <property name="sun.boot.class.path" value="C:\Program Files\Java\jdk1.8.0_111\jre\lib\resources.jar;C:\Program Files\Java\jdk1.8.0_111\jre\lib\rt.jar;C:\Program Files\Java\jdk1.8.0_111\jre\lib\sunrsasign.jar;C:\Program Files\Java\jdk1.8.0_111\jre\lib\jsse.jar;C:\Program Files\Java\jdk1.8.0_111\jre\lib\jce.jar;C:\Program Files\Java\jdk1.8.0_111\jre\lib\charsets.jar;C:\Program Files\Java\jdk1.8.0_111\jre\lib\jfr.jar;C:\Program Files\Java\jdk1.8.0_111\jre\classes"/>
+    <property name="java.vendor" value="Oracle Corporation"/>
+    <property name="maven.home" value="C:\Users\gmost\workspace\robot\EMBEDDED"/>
+    <property name="file.separator" value="\"/>
+    <property name="java.vendor.url.bug" value="http://bugreport.sun.com/bugreport/"/>
+    <property name="sun.cpu.endian" value="little"/>
+    <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
+    <property name="sun.desktop" value="windows"/>
+    <property name="sun.cpu.isalist" value="amd64"/>
+  </properties>
+  <testcase classname="Given a robot thats not placed at on a table   " name="Given a robot thats not placed at on a table   " time="0.003"/>
+  <testcase classname="When the robot is moved    " name="When the robot is moved    " time="0"/>
+  <testcase classname="Then it gets a move warning message: Our brave little robot has not been placed on the table, it cant do anything yet :(     " name="Then it gets a move warning message: Our brave little robot has not been placed on the table, it cant do anything yet :" time="0"/>
+  <testcase classname="When the robot is turned left      " name="When the robot is turned left      " time="0"/>
+  <testcase classname="Then it gets a move warning message: Our brave little robot has not been placed on the table, it cant do anything yet :(       " name="Then it gets a move warning message: Our brave little robot has not been placed on the table, it cant do anything yet :" time="0"/>
+  <testcase classname="When the robot is turned right        " name="When the robot is turned right        " time="0"/>
+  <testcase classname="Then it gets a move warning message: Our brave little robot has not been placed on the table, it cant do anything yet :(         " name="Then it gets a move warning message: Our brave little robot has not been placed on the table, it cant do anything yet :" time="0"/>
+  <testcase classname="Scenario: Give the robot commands before it has been placed  " name="Scenario: Give the robot commands before it has been placed  " time="0"/>
+  <testcase classname="Given a robot thats placed at 0,0,NORTH on a table thats 5x5           " name="Given a robot thats placed at 0,0,NORTH on a table thats 5x5           " time="0"/>
+  <testcase classname="When the robot is moved            " name="When the robot is moved            " time="0"/>
+  <testcase classname="Then its new location is 0,1,NORTH             " name="Then its new location is 0,1,NORTH             " time="0"/>
+  <testcase classname="When the robot is moved              " name="When the robot is moved              " time="0"/>
+  <testcase classname="Then its new location is 0,2,NORTH               " name="Then its new location is 0,2,NORTH               " time="0"/>
+  <testcase classname="When the robot is turned right                " name="When the robot is turned right                " time="0"/>
+  <testcase classname="Then its new location is 0,2,EAST                 " name="Then its new location is 0,2,EAST                 " time="0"/>
+  <testcase classname="When the robot is moved                  " name="When the robot is moved                  " time="0"/>
+  <testcase classname="Then its new location is 1,2,EAST                   " name="Then its new location is 1,2,EAST                   " time="0.001"/>
+  <testcase classname="When the robot is turned right                    " name="When the robot is turned right                    " time="0"/>
+  <testcase classname="Then its new location is 1,2,SOUTH                     " name="Then its new location is 1,2,SOUTH                     " time="0"/>
+  <testcase classname="When the robot is moved                      " name="When the robot is moved                      " time="0"/>
+  <testcase classname="Then its new location is 1,1,SOUTH                       " name="Then its new location is 1,1,SOUTH                       " time="0"/>
+  <testcase classname="When the robot is turned right                        " name="When the robot is turned right                        " time="0"/>
+  <testcase classname="Then its new location is 1,1,WEST                         " name="Then its new location is 1,1,WEST                         " time="0"/>
+  <testcase classname="When the robot is moved                          " name="When the robot is moved                          " time="0"/>
+  <testcase classname="Then its new location is 0,1,WEST                           " name="Then its new location is 0,1,WEST                           " time="0"/>
+  <testcase classname="Scenario: Move the robot around the table          " name="Scenario: Move the robot around the table          " time="0.001"/>
+  <testcase classname="Given a robot thats placed at 0,0,NORTH on a table thats 5x5                             " name="Given a robot thats placed at 0,0,NORTH on a table thats 5x5                             " time="0"/>
+  <testcase classname="When the robot is turned left                              " name="When the robot is turned left                              " time="0"/>
+  <testcase classname="Then its new location is 0,0,WEST                               " name="Then its new location is 0,0,WEST                               " time="0"/>
+  <testcase classname="When the robot is turned left                                " name="When the robot is turned left                                " time="0"/>
+  <testcase classname="Then its new location is 0,0,SOUTH                                 " name="Then its new location is 0,0,SOUTH                                 " time="0"/>
+  <testcase classname="When the robot is turned left                                  " name="When the robot is turned left                                  " time="0"/>
+  <testcase classname="Then its new location is 0,0,EAST                                   " name="Then its new location is 0,0,EAST                                   " time="0"/>
+  <testcase classname="When the robot is turned left                                    " name="When the robot is turned left                                    " time="0"/>
+  <testcase classname="Then its new location is 0,0,NORTH                                     " name="Then its new location is 0,0,NORTH                                     " time="0"/>
+  <testcase classname="When the robot is turned right                                      " name="When the robot is turned right                                      " time="0"/>
+  <testcase classname="Then its new location is 0,0,EAST                                       " name="Then its new location is 0,0,EAST                                       " time="0"/>
+  <testcase classname="When the robot is turned right                                        " name="When the robot is turned right                                        " time="0"/>
+  <testcase classname="Then its new location is 0,0,SOUTH                                         " name="Then its new location is 0,0,SOUTH                                         " time="0"/>
+  <testcase classname="When the robot is turned right                                          " name="When the robot is turned right                                          " time="0"/>
+  <testcase classname="Then its new location is 0,0,WEST                                           " name="Then its new location is 0,0,WEST                                           " time="0"/>
+  <testcase classname="When the robot is turned right                                            " name="When the robot is turned right                                            " time="0"/>
+  <testcase classname="Then its new location is 0,0,NORTH                                             " name="Then its new location is 0,0,NORTH                                             " time="0"/>
+  <testcase classname="Scenario: Turn the robot 360 degrees around one spot on the table                            " name="Scenario: Turn the robot 360 degrees around one spot on the table                            " time="0"/>
+  <testcase classname="Given a robot thats placed at 0,4,NORTH on a table thats 5x5                                               " name="Given a robot thats placed at 0,4,NORTH on a table thats 5x5                                               " time="0"/>
+  <testcase classname="When the robot is moved                                                " name="When the robot is moved                                                " time="0"/>
+  <testcase classname="Then it gets a move warning message: Cant do that I&apos;m afraid, our brave little robot will fall of the table :(                                                 " name="Then it gets a move warning message: Cant do that I&apos;m afraid, our brave little robot will fall of the table :" time="0"/>
+  <testcase classname="Then its new location is 0,4,NORTH                                                  " name="Then its new location is 0,4,NORTH                                                  " time="0"/>
+  <testcase classname="When the robot is turned right                                                   " name="When the robot is turned right                                                   " time="0"/>
+  <testcase classname="Then its new location is 0,4,EAST                                                    " name="Then its new location is 0,4,EAST                                                    " time="0"/>
+  <testcase classname="When the robot is moved                                                     " name="When the robot is moved                                                     " time="0"/>
+  <testcase classname="Then its new location is 1,4,EAST                                                      " name="Then its new location is 1,4,EAST                                                      " time="0"/>
+  <testcase classname="Scenario: Try and move the robot off the table and continue with other valid movements after                                              " name="Scenario: Try and move the robot off the table and continue with other valid movements after                                              " time="0"/>
+  <testcase classname="Given a robot and a table thats 5x5                                                         " name="Given a robot and a table thats 5x5                                                         " time="0"/>
+  <testcase classname="When the robot is placed at 0,0,NORTH                                                          " name="When the robot is placed at 0,0,NORTH                                                          " time="0"/>
+  <testcase classname="Then it should be at 0,0,NORTH                                                           " name="Then it should be at 0,0,NORTH                                                           " time="0"/>
+  <testcase classname="When the robot is placed again this time at 1,1,NORTH                                                            " name="When the robot is placed again this time at 1,1,NORTH                                                            " time="0"/>
+  <testcase classname="Then it should be at 1,1,NORTH                                                             " name="Then it should be at 1,1,NORTH                                                             " time="0"/>
+  <testcase classname="When the robot is placed outside the grid on the table 10,10,NORTH                                                              " name="When the robot is placed outside the grid on the table 10,10,NORTH                                                              " time="0.001"/>
+  <testcase classname="Then it gets a placement warning message: Cant place robot at: 10,10,NORTH                                                               " name="Then it gets a placement warning message: Cant place robot at: 10,10,NORTH                                                               " time="0"/>
+  <testcase classname="Then it should be at 1,1,NORTH                                                                " name="Then it should be at 1,1,NORTH                                                                " time="0"/>
+  <testcase classname="Scenario: Place a robot at various locations on the table                                                        " name="Scenario: Place a robot at various locations on the table                                                        " time="0.001"/>
+  <testcase classname="Given the command service                                                                   " name="Given the command service                                                                   " time="0.001"/>
+  <testcase classname="When the user types PLACE                                                                    " name="When the user types PLACE                                                                    " time="0"/>
+  <testcase classname="Then it should be resolved to the PLACE command                                                                     " name="Then it should be resolved to the PLACE command                                                                     " time="0"/>
+  <testcase classname="When the user types MOVE                                                                      " name="When the user types MOVE                                                                      " time="0"/>
+  <testcase classname="Then it should be resolved to the MOVE command                                                                       " name="Then it should be resolved to the MOVE command                                                                       " time="0"/>
+  <testcase classname="When the user types RIGHT                                                                        " name="When the user types RIGHT                                                                        " time="0"/>
+  <testcase classname="Then it should be resolved to the RIGHT command                                                                         " name="Then it should be resolved to the RIGHT command                                                                         " time="0"/>
+  <testcase classname="When the user types LEFT                                                                          " name="When the user types LEFT                                                                          " time="0"/>
+  <testcase classname="Then it should be resolved to the LEFT command                                                                           " name="Then it should be resolved to the LEFT command                                                                           " time="0"/>
+  <testcase classname="When the user types REPORT                                                                            " name="When the user types REPORT                                                                            " time="0"/>
+  <testcase classname="Then it should be resolved to the REPORT command                                                                             " name="Then it should be resolved to the REPORT command                                                                             " time="0"/>
+  <testcase classname="Scenario: Supported commands                                                                  " name="Scenario: Supported commands                                                                  " time="0.001"/>
+  <testcase classname="Given the command service                                                                               " name="Given the command service                                                                               " time="0"/>
+  <testcase classname="When the user types place                                                                                " name="When the user types place                                                                                " time="0.01"/>
+  <testcase classname="Then it should be resolved to the PLACE command                                                                                 " name="Then it should be resolved to the PLACE command                                                                                 " time="0"/>
+  <testcase classname="When the user types move                                                                                  " name="When the user types move                                                                                  " time="0"/>
+  <testcase classname="Then it should be resolved to the MOVE command                                                                                   " name="Then it should be resolved to the MOVE command                                                                                   " time="0"/>
+  <testcase classname="When the user types right                                                                                    " name="When the user types right                                                                                    " time="0"/>
+  <testcase classname="Then it should be resolved to the RIGHT command                                                                                     " name="Then it should be resolved to the RIGHT command                                                                                     " time="0"/>
+  <testcase classname="When the user types left                                                                                      " name="When the user types left                                                                                      " time="0"/>
+  <testcase classname="Then it should be resolved to the LEFT command                                                                                       " name="Then it should be resolved to the LEFT command                                                                                       " time="0"/>
+  <testcase classname="When the user types report                                                                                        " name="When the user types report                                                                                        " time="0"/>
+  <testcase classname="Then it should be resolved to the REPORT command                                                                                         " name="Then it should be resolved to the REPORT command                                                                                         " time="0"/>
+  <testcase classname="Scenario: Supported commands that does not match case exactly                                                                              " name="Scenario: Supported commands that does not match case exactly                                                                              " time="0.001"/>
+  <testcase classname="Given the command service                                                                                           " name="Given the command service                                                                                           " time="0"/>
+  <testcase classname="When the user types TEST                                                                                            " name="When the user types TEST                                                                                            " time="0"/>
+  <testcase classname="Then it gives a command warning message: Unsupported command                                                                                             " name="Then it gives a command warning message: Unsupported command                                                                                             " time="0"/>
+  <testcase classname="Scenario: Unsupported command                                                                                          " name="Scenario: Unsupported command                                                                                          " time="0"/>
+</testsuite>

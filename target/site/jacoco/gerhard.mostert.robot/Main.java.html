@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../.resources/report.css" type="text/css"/><link rel="shortcut icon" href="../.resources/report.gif" type="image/gif"/><title>Main.java</title><link rel="stylesheet" href="../.resources/prettify.css" type="text/css"/><script type="text/javascript" src="../.resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../.sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">robot</a> &gt; <a href="index.source.html" class="el_package">gerhard.mostert.robot</a> &gt; <span class="el_source">Main.java</span></div><h1>Main.java</h1><pre class="source lang-java linenums">package gerhard.mostert.robot;
+
+import java.util.Scanner;
+
+import gerhard.mostert.robot.domain.Command;
+import gerhard.mostert.robot.domain.Placement;
+import gerhard.mostert.robot.domain.Robot;
+import gerhard.mostert.robot.domain.Table;
+import gerhard.mostert.robot.service.CommandService;
+import gerhard.mostert.robot.service.CommandServiceImpl;
+import gerhard.mostert.robot.service.RobotService;
+import gerhard.mostert.robot.service.RobotServiceImpl;
+
+/**
+ * Main class to run the app
+ * 
+ * @author gmost
+ *
+ */
+public class Main {
+	
+<span class="nc" id="L22">	private CommandService commandService = new CommandServiceImpl();</span>
+<span class="nc" id="L23">	private RobotService robotService = new RobotServiceImpl();</span>
+
+	/**
+	 * 
+	 * @param args Two arguments are supported, the first is for the width of the table, the second for the height
+	 */
+	public static void main(String[] args) {
+<span class="nc" id="L30">		new Main(args);</span>
+<span class="nc" id="L31">	}</span>
+	
+<span class="nc" id="L33">	public Main(String[] args) {</span>
+<span class="nc" id="L34">		System.out.println(&quot;Start your adventure by placing the robot on the table:&quot;);</span>
+<span class="nc" id="L35">		Robot robot = new Robot();</span>
+<span class="nc" id="L36">		Table table = createTable(args);</span>
+<span class="nc" id="L37">		Placement placement = null;</span>
+<span class="nc" id="L38">		Scanner scanner = new Scanner(System.in);</span>
+		
+<span class="nc bnc" id="L40" title="All 2 branches missed.">	    while(scanner.hasNext()) {</span>
+	    	try {
+<span class="nc" id="L42">	    		Command command = commandService.getCommand(scanner.next());</span>
+<span class="nc bnc" id="L43" title="All 6 branches missed.">		    	switch (command) {</span>
+		    		case PLACE: {
+<span class="nc" id="L45">		    			placement = commandService.getPlacement(scanner.next()); //Immediately get next value with contains the params for the PLACE command</span>
+<span class="nc" id="L46">						robot = robotService.place(robot, table, placement.getX(), placement.getY(), placement.getFace());</span>
+<span class="nc" id="L47">						break;</span>
+		    		}
+		    		case MOVE: {
+<span class="nc" id="L50">		    			robot = robotService.move(robot, table);</span>
+<span class="nc" id="L51">		    			break;</span>
+		    		}
+					case RIGHT: {
+<span class="nc" id="L54">						robot = robotService.right(robot, table);</span>
+<span class="nc" id="L55">						break;</span>
+					}
+					case LEFT: {
+<span class="nc" id="L58">						robot = robotService.left(robot, table);</span>
+<span class="nc" id="L59">						break;</span>
+					}
+					case REPORT: {
+<span class="nc" id="L62">						System.out.println(robotService.report(robot));</span>
+						break;
+					}
+		    	}
+<span class="nc" id="L66">	    	} catch (NumberFormatException e) {</span>
+<span class="nc" id="L67">				System.out.println(e.getMessage());</span>
+<span class="nc" id="L68">			} catch (IllegalArgumentException e) {</span>
+<span class="nc" id="L69">				System.out.println(e.getMessage());</span>
+<span class="nc" id="L70">			}</span>
+        }
+<span class="nc" id="L72">	    System.out.println(&quot;Your adventure has come to an end.&quot;);</span>
+<span class="nc" id="L73">	    scanner.close();</span>
+<span class="nc" id="L74">	}</span>
+	
+	private Table createTable(String[] args) {
+<span class="nc" id="L77">		Table table = new Table();</span>
+		try {
+<span class="nc bnc" id="L79" title="All 4 branches missed.">			if (args != null &amp;&amp; args.length &gt; 0) {</span>
+<span class="nc" id="L80">				table.setWidth(Integer.parseInt(args[0]));</span>
+<span class="nc" id="L81">				table.setHeight(Integer.parseInt(args[1]));</span>
+			}
+<span class="nc" id="L83">		} catch (Exception e) {</span>
+<span class="nc" id="L84">			System.out.println(&quot;Cant set tabel size: &quot; + e.getMessage());</span>
+<span class="nc" id="L85">		}</span>
+<span class="nc" id="L86">		return table;</span>
+	}
+
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.eclemma.org/jacoco">JaCoCo</a> 0.7.5.201505241946</span></div></body></html>

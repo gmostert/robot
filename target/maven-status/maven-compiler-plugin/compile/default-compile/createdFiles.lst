@@ -1,0 +1,12 @@
+gerhard\mostert\robot\domain\Placement.class
+gerhard\mostert\robot\domain\Table.class
+gerhard\mostert\robot\service\CommandService.class
+gerhard\mostert\robot\service\RobotServiceImpl$1.class
+gerhard\mostert\robot\service\RobotServiceImpl.class
+gerhard\mostert\robot\Main$1.class
+gerhard\mostert\robot\service\CommandServiceImpl.class
+gerhard\mostert\robot\domain\Command.class
+gerhard\mostert\robot\domain\Robot.class
+gerhard\mostert\robot\domain\Face.class
+gerhard\mostert\robot\Main.class
+gerhard\mostert\robot\service\RobotService.class

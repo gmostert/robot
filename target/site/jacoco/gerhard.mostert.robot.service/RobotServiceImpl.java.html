@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../.resources/report.css" type="text/css"/><link rel="shortcut icon" href="../.resources/report.gif" type="image/gif"/><title>RobotServiceImpl.java</title><link rel="stylesheet" href="../.resources/prettify.css" type="text/css"/><script type="text/javascript" src="../.resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../.sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">robot</a> &gt; <a href="index.source.html" class="el_package">gerhard.mostert.robot.service</a> &gt; <span class="el_source">RobotServiceImpl.java</span></div><h1>RobotServiceImpl.java</h1><pre class="source lang-java linenums">package gerhard.mostert.robot.service;
+
+import gerhard.mostert.robot.domain.Face;
+import gerhard.mostert.robot.domain.Robot;
+import gerhard.mostert.robot.domain.Table;
+
+/**
+ * The implementation class for the &lt;code&gt;RobotService&lt;/code&gt;.
+ * 
+ * @author gmost
+ *
+ */
+<span class="fc" id="L13">public class RobotServiceImpl implements RobotService {</span>
+
+	public Robot place(Robot robot, Table table, int x, int y, Face face) throws IllegalArgumentException {
+<span class="pc bpc" id="L16" title="4 of 10 branches missed.">		if (x &lt; 0 || x &gt;= table.getWidth() || y &lt; 0 || y &gt;= table.getHeight() || face == null) {</span>
+<span class="fc" id="L17">			throw new IllegalArgumentException(&quot;Cant place robot at: &quot; + x + &quot;,&quot; + y + &quot;,&quot; + face);</span>
+		}
+		
+<span class="fc" id="L20">		robot.setX(x);</span>
+<span class="fc" id="L21">		robot.setY(y);</span>
+<span class="fc" id="L22">		robot.setFace(face);</span>
+<span class="fc" id="L23">		return robot;</span>
+	}
+
+	public Robot move(Robot robot, Table table) throws IllegalStateException, IllegalArgumentException {
+<span class="fc" id="L27">		hasRobotBeenPlaced(robot);</span>
+<span class="pc bpc" id="L28" title="1 of 5 branches missed.">		switch (robot.getFace()) {</span>
+			case NORTH: {
+<span class="fc bfc" id="L30" title="All 2 branches covered.">				if (robot.getY() + 1 &gt;= table.getHeight()) {</span>
+<span class="nc" id="L31">					createCantBePlacedThereException();</span>
+				}
+<span class="fc" id="L33">				robot.setY(robot.getY() + 1);</span>
+<span class="fc" id="L34">				break;</span>
+			}
+			case SOUTH: {
+<span class="pc bpc" id="L37" title="1 of 2 branches missed.">				if (robot.getY() - 1 &lt; 0) {</span>
+<span class="nc" id="L38">					createCantBePlacedThereException();</span>
+				}
+<span class="fc" id="L40">				robot.setY(robot.getY() - 1);</span>
+<span class="fc" id="L41">				break;</span>
+			}
+			case EAST: {
+<span class="pc bpc" id="L44" title="1 of 2 branches missed.">				if (robot.getX() + 1 &gt;= table.getWidth()) {</span>
+<span class="nc" id="L45">					createCantBePlacedThereException();</span>
+				}
+<span class="fc" id="L47">				robot.setX(robot.getX() + 1);</span>
+<span class="fc" id="L48">				break;</span>
+			}
+			case WEST: {
+<span class="pc bpc" id="L51" title="1 of 2 branches missed.">				if (robot.getX() - 1 &lt; 0) {</span>
+<span class="nc" id="L52">					createCantBePlacedThereException();</span>
+				}
+<span class="fc" id="L54">				robot.setX(robot.getX() - 1);</span>
+				break;
+			}
+		}
+<span class="fc" id="L58">		return robot;</span>
+	}
+
+	public Robot left(Robot robot, Table table) throws IllegalStateException {
+<span class="fc" id="L62">		hasRobotBeenPlaced(robot);</span>
+<span class="pc bpc" id="L63" title="1 of 5 branches missed.">		switch (robot.getFace()) {</span>
+<span class="fc" id="L64">			case NORTH: robot.setFace(Face.WEST); break;</span>
+<span class="fc" id="L65">			case SOUTH: robot.setFace(Face.EAST); break;</span>
+<span class="fc" id="L66">			case EAST: robot.setFace(Face.NORTH); break;</span>
+<span class="fc" id="L67">			case WEST: robot.setFace(Face.SOUTH); break;</span>
+		}
+<span class="fc" id="L69">		return robot;</span>
+	}
+
+	public Robot right(Robot robot, Table table) throws IllegalStateException {
+<span class="fc" id="L73">		hasRobotBeenPlaced(robot);</span>
+<span class="pc bpc" id="L74" title="1 of 5 branches missed.">		switch (robot.getFace()) {</span>
+<span class="fc" id="L75">			case NORTH: robot.setFace(Face.EAST); break;</span>
+<span class="fc" id="L76">			case SOUTH: robot.setFace(Face.WEST); break;</span>
+<span class="fc" id="L77">			case EAST: robot.setFace(Face.SOUTH); break;</span>
+<span class="fc" id="L78">			case WEST: robot.setFace(Face.NORTH); break;</span>
+		}
+<span class="fc" id="L80">		return robot;</span>
+	}
+
+	public String report(Robot robot) throws IllegalStateException {
+<span class="fc" id="L84">		hasRobotBeenPlaced(robot);</span>
+<span class="fc" id="L85">		return robot.getX() + &quot;,&quot; + robot.getY()  + &quot;,&quot; + robot.getFace().toString();</span>
+	}
+	
+	private void hasRobotBeenPlaced(Robot robot) throws IllegalStateException {
+<span class="pc bpc" id="L89" title="1 of 4 branches missed.">		if (robot.getX() == -1 || robot.getY() == -1) {</span>
+<span class="fc" id="L90">			throw new IllegalArgumentException(&quot;Our brave little robot has not been placed on the table, it cant do anything yet :(&quot;);</span>
+		}
+<span class="fc" id="L92">	}</span>
+	
+	private IllegalArgumentException createCantBePlacedThereException() {
+<span class="fc" id="L95">		throw new IllegalArgumentException(&quot;Cant do that I'm afraid, our brave little robot will fall of the table :(&quot;);</span>
+	}
+	
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.eclemma.org/jacoco">JaCoCo</a> 0.7.5.201505241946</span></div></body></html>

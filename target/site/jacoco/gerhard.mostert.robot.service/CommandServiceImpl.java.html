@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../.resources/report.css" type="text/css"/><link rel="shortcut icon" href="../.resources/report.gif" type="image/gif"/><title>CommandServiceImpl.java</title><link rel="stylesheet" href="../.resources/prettify.css" type="text/css"/><script type="text/javascript" src="../.resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../.sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">robot</a> &gt; <a href="index.source.html" class="el_package">gerhard.mostert.robot.service</a> &gt; <span class="el_source">CommandServiceImpl.java</span></div><h1>CommandServiceImpl.java</h1><pre class="source lang-java linenums">package gerhard.mostert.robot.service;
+
+import gerhard.mostert.robot.domain.Command;
+import gerhard.mostert.robot.domain.Face;
+import gerhard.mostert.robot.domain.Placement;
+
+/**
+ * This is the implementation class of the &lt;code&gt;CommandService&lt;/code&gt;
+ * 
+ * @author gmost
+ *
+ */
+<span class="fc" id="L13">public class CommandServiceImpl implements CommandService {</span>
+
+	public Command getCommand(String input) throws IllegalArgumentException {
+<span class="fc bfc" id="L16" title="All 2 branches covered.">		if (input.toUpperCase().contains(Command.PLACE.getText())) {</span>
+<span class="fc" id="L17">			return Command.PLACE;</span>
+<span class="fc bfc" id="L18" title="All 2 branches covered.">		} else if (input.equalsIgnoreCase(Command.MOVE.getText())) {</span>
+<span class="fc" id="L19">			return Command.MOVE;</span>
+<span class="fc bfc" id="L20" title="All 2 branches covered.">		} else if (input.equalsIgnoreCase(Command.RIGHT.getText())) {</span>
+<span class="fc" id="L21">			return Command.RIGHT;</span>
+<span class="fc bfc" id="L22" title="All 2 branches covered.">		} else if (input.equalsIgnoreCase(Command.LEFT.getText())) {</span>
+<span class="fc" id="L23">			return Command.LEFT;</span>
+<span class="fc bfc" id="L24" title="All 2 branches covered.">		} else if (input.equalsIgnoreCase(Command.REPORT.getText())) {</span>
+<span class="fc" id="L25">			return Command.REPORT;</span>
+		} else {
+<span class="fc" id="L27">			throw new IllegalArgumentException(&quot;Unsupported command&quot;);</span>
+		}
+	}
+	
+	public Placement getPlacement(String input) throws IllegalArgumentException {
+		try {
+<span class="fc" id="L33">			Placement placement = new Placement();</span>
+<span class="fc" id="L34">			String[] inputs = input.split(&quot;,&quot;);</span>
+<span class="fc" id="L35">			placement.setX(Integer.parseInt(inputs[0]));</span>
+<span class="fc" id="L36">			placement.setY(Integer.parseInt(inputs[1]));</span>
+<span class="fc" id="L37">			placement.setFace(Face.fromString(inputs[2]));</span>
+<span class="fc" id="L38">			return placement;</span>
+<span class="nc" id="L39">		} catch (Exception e) {</span>
+<span class="nc" id="L40">			throw new IllegalArgumentException(&quot;Could not determine where to place the robot&quot;);</span>
+		}
+	}
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.eclemma.org/jacoco">JaCoCo</a> 0.7.5.201505241946</span></div></body></html>

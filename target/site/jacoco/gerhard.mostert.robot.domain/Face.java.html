@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../.resources/report.css" type="text/css"/><link rel="shortcut icon" href="../.resources/report.gif" type="image/gif"/><title>Face.java</title><link rel="stylesheet" href="../.resources/prettify.css" type="text/css"/><script type="text/javascript" src="../.resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../.sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">robot</a> &gt; <a href="index.source.html" class="el_package">gerhard.mostert.robot.domain</a> &gt; <span class="el_source">Face.java</span></div><h1>Face.java</h1><pre class="source lang-java linenums">package gerhard.mostert.robot.domain;
+
+/**
+ * This enum contains all the direction the Robot can face on the table.
+ * 
+ * @author gmost
+ *
+ */
+<span class="pc" id="L9">public enum Face {</span>
+<span class="fc" id="L10">	NORTH(&quot;NORTH&quot;), SOUTH(&quot;SOUTH&quot;), EAST(&quot;EAST&quot;), WEST(&quot;WEST&quot;);</span>
+
+	private String text;
+
+<span class="fc" id="L14">	Face(String text) {</span>
+<span class="fc" id="L15">		this.text = text;</span>
+<span class="fc" id="L16">	}</span>
+
+	public String getText() {
+<span class="nc" id="L19">		return this.text;</span>
+	}
+
+	/**
+	 * Get the enum matching the specified text. 
+	 * 
+	 * @param text String to find enum for.
+	 * @return The matching &lt;code&gt;Face&lt;/code&gt; enum
+	 */
+	public static Face fromString(String text) {
+<span class="pc bpc" id="L29" title="1 of 2 branches missed.">		if (text != null) {</span>
+<span class="pc bpc" id="L30" title="1 of 2 branches missed.">			for (Face f : Face.values()) {</span>
+<span class="pc bpc" id="L31" title="1 of 2 branches missed.">				if (text.equalsIgnoreCase(f.text)) {</span>
+<span class="fc" id="L32">					return f;</span>
+				}
+			}
+		}
+<span class="nc" id="L36">		return null;</span>
+	}
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.eclemma.org/jacoco">JaCoCo</a> 0.7.5.201505241946</span></div></body></html>

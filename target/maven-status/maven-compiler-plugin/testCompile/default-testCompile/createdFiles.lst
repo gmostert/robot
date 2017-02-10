@@ -1,0 +1,4 @@
+feature\robot\UserCommands.class
+feature\robot\RobotPlacement.class
+feature\robot\RobotTest.class
+feature\robot\RobotMovement.class
